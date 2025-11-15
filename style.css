@@ -1,0 +1,212 @@
+* {
+    margin:0;
+    box-sizing: content-box;
+    caret-color:transparent; /*I hate that caret hovering on uneditable text*/
+    font-family: "Hanken Grotesk", sans-serif;
+}
+
+html {
+    font-size: 10px; /*just to make the rem easier to calculate*/
+}
+
+body {
+    display: grid;
+    background-color:hsl(241, 100%, 89%);
+}
+
+.container {background-color:white;}
+
+.result {
+    width: 100%;
+    height: fit-content;
+    background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+    border-radius:0 0 14px 14px;
+    display:grid;
+    justify-items: center;
+}
+
+.result > * {
+    margin:1rem;
+}
+
+.total-score {
+    border-radius:50%;
+    width:14rem;
+    height: 14rem;
+    background-image:linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap:wrap;
+}
+
+h1 {
+    color:white;
+    font-size:7rem;
+    margin:0 auto;
+    font-weight: 800;
+}
+
+.total-score div {
+    color:hsl(241, 100%, 89%);
+    opacity:.8;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    font-size:1.8rem;
+    font-weight: 500;
+}
+
+h3 {
+    color:hsl(241, 100%, 89%);
+    opacity:.8;
+    font-size:1.8rem;
+    font-weight: 500;
+}
+
+h2 {
+    color: white;
+    font-size:2.5rem;
+    font-weight:700;
+    margin-bottom:0 !important;
+}
+
+p {
+    margin:3rem !important;
+    margin-top:0 !important;
+    color:hsl(241, 100%, 89%);
+    opacity:.8;
+    font-size: 1.8rem;
+    text-align:center;
+    width:80%;
+}
+
+ul:nth-of-type(li) {
+    padding:1rem;
+    display: grid;
+    justify-items: center;
+}
+
+ul::first-line{
+    font-size:2.5rem;
+    font-weight: 700;
+}
+
+li {
+    display: flex;
+    justify-content: space-around;
+    width:80%;
+    border-radius:15px;
+    font-size:1.8rem;
+    padding:1.3rem;
+    border-radius: 10px;
+    position:relative;
+    margin: 1rem;
+}
+
+#one {
+    background-color:hsla(0, 100%, 67%,15%);
+    color:hsl(0, 100%, 67%);
+
+}
+
+#two {
+    background-color:hsla(39, 100%, 56%,15%);
+    color:hsl(39, 100%, 56%)
+}
+
+#three {
+    background-color:hsla(166, 100%, 37%,15%);
+    color:hsl(166, 100%, 37%);
+}
+
+#four {
+    background-color:hsla(234, 85%, 45%,15%);
+    color:hsl(234, 85%, 45%);
+}
+
+li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    position:absolute;
+    left:1rem;
+}
+
+#one::before {
+    background-image:url(assets/images/icon-reaction.svg)
+}
+
+#two::before {
+    background-image:url(assets/images/icon-memory.svg)
+}
+
+#three::before {
+    background-image:url(assets/images/icon-verbal.svg)
+}
+
+#four::before {
+    background-image:url(assets/images/icon-visual.svg)
+}
+
+li .number {
+    color:hsl(224, 30%, 27%);
+    font-weight: 700;
+}
+
+li .number::after {
+    content:" / 100";
+    color:hsl(0, 0%, 60%);
+    opacity:.3;
+    font-weight: 800;
+}
+
+#continue{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    all: initial;
+    cursor:pointer;
+    background-color:hsl(224, 30%, 27%);
+    width:80%;
+    padding:2rem 0;
+    text-align: center;
+    color:white;
+    font-size:2.5rem;
+    font-weight: 800;
+    border-radius:50px;
+    margin: 2rem;
+}
+
+button:hover {
+    background-color: hsla(256, 72%, 46%, 1);
+}
+
+
+@media (width >750px) {
+    .result {
+        border-radius:14px ;
+        width:375px;
+        height: 100%;
+    }
+    body {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap:wrap;
+        min-height: 100vh;
+    }
+    .sum {
+        width:375px;
+        height:100%
+    }
+    .container {
+        border-radius: 14px;
+        width:750px;
+        display: grid;
+        grid-template-columns:375px 375px;
+    }
+}
